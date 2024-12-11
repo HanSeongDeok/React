@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <DefaultHeader title="REACT"/>
-      <DefaultNav topic={topics}/>
+      <DefaultNav topic = {topics}/>
       <DefaultArticle title="WELCOME" body="HELLO WEB"/>
       <FuncHeader/>
       <FuncNav/>

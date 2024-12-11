@@ -1,13 +1,14 @@
 import { memo } from 'react'
 
-const DefaultNav = memo((topics) => {
-    console.log(topics.topic)
+const DefaultNav = memo((props) => {
     return (
       <nav>
         <ol>
-          <li><a href='/read/1'>{topics.topic[0].title}</a></li>
-          <li><a href='/read/2'>CSS</a></li>
-          <li><a href='/read/3'>JS</a></li>
+          {props.topic.map((topic) => (
+            <li key={topic.id}>
+               <a href={`/read/${topic.id}`}>{topic.title}</a>
+            </li>
+          ))}
         </ol>
       </nav>
     );
