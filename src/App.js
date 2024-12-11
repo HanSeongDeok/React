@@ -4,6 +4,21 @@ import { default as DefaultHeader } from './components/Header/header'
 import { default as DefaultArticle } from './components/Article/article'
 import { default as DefaultNav } from './components/Nav/nav'
 import { memo } from 'react'
+import topics from './components/Nav/topics';
+
+function App() {
+  return (
+    <div>
+      <DefaultHeader title="REACT"/>
+      <DefaultNav topic={topics}/>
+      <DefaultArticle title="WELCOME" body="HELLO WEB"/>
+      <FuncHeader/>
+      <FuncNav/>
+      <FuncArticle/>
+    </div>
+  );
+}
+
 /**
  * Funtional Components Header
  */
@@ -41,18 +56,5 @@ const FuncArticle = memo(() => {
     </article>
   );
 });
-
-function App() {
-  return (
-    <div>
-      <DefaultHeader/>
-      <DefaultNav/>
-      <DefaultArticle/>
-      <FuncHeader/>
-      <FuncNav/>
-      <FuncArticle/>
-    </div>
-  );
-}
 
 export default App;

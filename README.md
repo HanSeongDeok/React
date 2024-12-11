@@ -52,4 +52,5 @@
     > [HOC 고차 컴포넌트](https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html)
     > ![alt text](image-1.png) 
 
-5. 
+5. PROPS
+

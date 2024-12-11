@@ -1,10 +1,10 @@
 import { memo } from 'react'
 
-const DefaultArticle = memo(() => {
+const DefaultArticle = memo((props) => {
     return (
       <article>
-        <h2>WELCOME</h2>
-        HELLO REACT!
+        <h2>{props.title}</h2>
+        {props.body}
       </article>
     );
 });

@@ -1,8 +1,8 @@
 import { memo } from "react";
-const DefaultHeader = memo(()=> {
+const DefaultHeader = memo((props)=> {
     return (
         <header>
-          <h1><a href='/'>WEB</a></h1>
+          <h1><a href='/'>{props.title}</a></h1>
         </header>
         );
 });
