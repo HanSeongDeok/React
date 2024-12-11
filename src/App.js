@@ -12,12 +12,18 @@ function App() {
       <DefaultHeader title="REACT"/>
       <DefaultNav topic = {topics}/>
       <DefaultArticle title="WELCOME" body="HELLO WEB"/>
-      <FuncHeader/>
-      <FuncNav/>
-      <FuncArticle/>
+      
+      {/*
+        참고Dragon
+        <FuncHeader/>
+        <FuncNav/>
+        <FuncArticle/>
+      */}
     </div>
   );
 }
+
+/** 아래는 그냥 예시 */
 
 /**
  * Funtional Components Header
