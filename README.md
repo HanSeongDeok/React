@@ -19,7 +19,8 @@
     > ![alt text](image.png)
 
 4. 컴포넌트
-    - 클래스 컴포넌트  
+    - Components 컴포넌트  
+    > [컴포넌트](https://ko.legacy.reactjs.org/docs/components-and-props.html)
     ``` 
     src/
     ├── components/
@@ -46,6 +47,9 @@
         export default DefaultHeader; 
     ```
    
-    - 요즘은 함수형 컴포넌트를 애용한다고 한다. 아니 도대체 왜????
-    - 
+    - 요즘은 함수형 컴포넌트를 애용한다고 한다. 간결해 보인다.
+    - HOC(High-Order Component)
+    > [HOC 고차 컴포넌트](https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html)
+    > ![alt text](image-1.png) 
 
+5. 
