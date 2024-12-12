@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import { NavEvent } from '../../events/alertEvent';
 
 const DefaultNav = memo((props) => {
     return (
@@ -6,7 +7,9 @@ const DefaultNav = memo((props) => {
         <ol>
           {props.topic.map((topic) => (
             <li key={topic.id}>
-               <a href={`/read/${topic.id}`}>{topic.title}</a>
+              <a href={`/read/${topic.id}`} onClick={(event)=>NavEvent(props, event, topic.id)}>
+                {topic.title}
+              </a>
             </li>
           ))}
         </ol>

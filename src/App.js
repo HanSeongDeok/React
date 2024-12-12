@@ -4,13 +4,14 @@ import { default as DefaultHeader } from './components/Header/header'
 import { default as DefaultArticle } from './components/Article/article'
 import { default as DefaultNav } from './components/Nav/nav'
 import { memo } from 'react'
+import { HeaderAlert, NavAlert } from './events/alertEvent';
 import topics from './components/Nav/topics';
 
 function App() {
   return (
     <div>
-      <DefaultHeader title="REACT"/>
-      <DefaultNav topic = {topics}/>
+      <DefaultHeader title= "REACT" onChangeMode = {HeaderAlert}/>
+      <DefaultNav topic = {topics} onChangeMode = {NavAlert}/>
       <DefaultArticle title="WELCOME" body="HELLO WEB"/>
       
       {/*
