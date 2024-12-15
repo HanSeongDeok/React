@@ -40,15 +40,11 @@ export const StateConverter = {
 
     setMode(mode) {
         this.mode = mode;
-        const [_mode, _setMode] = ModeByState();
-        _setMode(mode)
         return this; 
     },
 
     setNavInfo(navInfo) {
         this.navInfo = navInfo;
-        const [id, setId] = IdByState();
-        setId(navInfo.id)
         return this;
     },
 

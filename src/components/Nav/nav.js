@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { NavEvent } from '../../events/alertEvent';
 import { NavConvert } from '../../events/convertStateEvent'; 
-import { NAV_MODE } from "../Modes/modes";
+import topics from './topics';
 
 const DefaultNav = memo((props) => {
     return (
@@ -11,7 +11,7 @@ const DefaultNav = memo((props) => {
             <li key={topic.id}>
               <a href={`/read/${topic.id}`} onClick={(event)=>{
                 NavEvent(props, event, topic.id);
-                NavConvert(NAV_MODE);
+                NavConvert("READ", {id: topic.id, topics: topic});
               }}>
                 {topic.title}
               </a>

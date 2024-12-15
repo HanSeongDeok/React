@@ -1,7 +1,6 @@
 import { memo } from "react";
 import { HeadEvent } from "../../events/alertEvent";
 import { HeadConvert } from "../../events/convertStateEvent";
-import { HEAD_MODE } from "../Modes/modes";
 
 const DefaultHeader = memo((props)=> {
     return (
@@ -9,7 +8,7 @@ const DefaultHeader = memo((props)=> {
           <h1>
             <a href='/' onClick={(event) => {
                 HeadEvent(props, event);
-                HeadConvert(HEAD_MODE);
+                HeadConvert("WELCOME");
               }}>
               {props.title}
             </a>
