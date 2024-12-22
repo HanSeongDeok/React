@@ -16,20 +16,13 @@ const _RefreshComponent = (mode, id, topics) => {
     });
 }
 
-const headModeArticle = <DefaultArticle title="WELCOME" body="HELLO WEB"/>;
-const navModeArticle = (id, topics) => {
-    for(let i=0; i < topics.length; i++) {
-        if(topics[i].id === id) {
-            <DefaultArticle title={topics[i].id} body={topics[i].body}/>
-        }
-    }
-}
+const headModeArticle = () => <DefaultArticle title="WELCOME" body="HELLO WEB"/>;
+const navModeArticle = (topics) => (<DefaultArticle title={topics.id} body={topics.body}/>)
 
 /**
  * 하다보니 위 처럼 여러 함수를 export 해서 쓰는게 아닌 필요한 함수들을
  * 담은 객체를 export 하는게 더 깔끔하고 효율적일 듯.
  * 다만, 함수 자체도 필요시 export 하는 것도 나쁘지 않을 듯. 
- * 트랜디 한가?? -> 
  */
 export const StateConverter = {
     mode: null,
@@ -51,7 +44,7 @@ export const StateConverter = {
     convert() {
         return this.mode === HEAD_MODE ? 
             headModeArticle : 
-            navModeArticle(this.navInfo.id, this.navInfo.topics) 
+            navModeArticle(this.navInfo.topics) 
     }
 };
 

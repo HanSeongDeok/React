@@ -1,14 +1,16 @@
 import { memo } from "react";
 import { HeadEvent } from "../../events/alertEvent";
 import { HeadConvert } from "../../events/convertStateEvent";
+import { useContent } from "../Modes/modes";
 
 const DefaultHeader = memo((props)=> {
-    return (
+  const { setCompo } = useContent();  
+  return (
         <header>
           <h1>
             <a href='/' onClick={(event) => {
                 HeadEvent(props, event);
-                HeadConvert("WELCOME");
+                setCompo(HeadConvert("WELCOME"));
               }}>
               {props.title}
             </a>
