@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { HeadEvent } from "../../events/alertEvent";
 import { HeadConvert } from "../../events/convertStateEvent";
-import { useContent } from "../Modes/modes";
+import { useContent } from "../../states/modes";
 
 const DefaultHeader = memo((props)=> {
   const { setCompo } = useContent();  

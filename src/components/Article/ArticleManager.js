@@ -1,6 +1,6 @@
 import topics from "../Nav/topics";
 import DefaultArticle from "./Article";
-import { IdByState, ModeByState, HEAD_MODE } from "../Modes/modes";
+import { HEAD_MODE } from "../../states/modes";
 
 const _ConvertState = (mode) => {
     return new Promise((resolve) => {
@@ -16,8 +16,8 @@ const _RefreshComponent = (mode, id, topics) => {
     });
 }
 
-const headModeArticle = () => <DefaultArticle title="WELCOME" body="HELLO WEB"/>;
-const navModeArticle = (topics) => (<DefaultArticle title={topics.id} body={topics.body}/>)
+export const headModeArticle = () => <DefaultArticle title="WELCOME" body="HELLO WEB"/>;
+export const navModeArticle = (topics) => (<DefaultArticle title={topics.id} body={topics.body}/>)
 
 /**
  * 하다보니 위 처럼 여러 함수를 export 해서 쓰는게 아닌 필요한 함수들을
@@ -48,4 +48,4 @@ export const StateConverter = {
     }
 };
 
-export { _ConvertState, _RefreshComponent, headModeArticle };
+export { _ConvertState, _RefreshComponent };

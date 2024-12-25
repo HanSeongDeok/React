@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { NavEvent } from '../../events/alertEvent';
 import { NavConvert } from '../../events/convertStateEvent'; 
-import { useContent } from '../Modes/modes';
+import { useContent } from '../../states/modes';
 
 const DefaultNav = memo((props) => {
     const { setCompo } = useContent();
