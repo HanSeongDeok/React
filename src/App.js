@@ -5,15 +5,24 @@ import { default as DefaultCreate } from './components/Create/Create'
 import { HeaderAlert, NavAlert } from './events/alertEvent';
 import topics from './components/Nav/topics';
 import { ContentProvider, useContent } from './states/modes';
+import { useState } from 'react';
 
 function App() {
-  const test = useContent().topic;
+  const [currentPage, setPage] = useState("default");
+  const HandlePage = (e, page) => {
+    e.preventDefault();
+    setPage(page); 
+  }
+  let content = currentPage === "create" ? <DefaultCreate onCreate = {createFunc}/> : null;
   return (
     <div>
       <DefaultHeader title= "REACT" onChangeMode = {HeaderAlert}/>
       <DefaultNav topic = {useContent().topic} onChangeMode = {NavAlert}/>
       { useContent().compo }
-      <DefaultCreate onCreate = {createFunc}/>
+      <a href='/create' onClick={e=>HandlePage(e, "create")}>
+        CREATE
+      </a>
+      {content}
     </div>
   );
 }
