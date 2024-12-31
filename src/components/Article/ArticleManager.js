@@ -1,4 +1,3 @@
-import topics from "../Nav/topics";
 import DefaultArticle from "./Article";
 import { HEAD_MODE } from "../../states/modes";
 
@@ -17,7 +16,7 @@ const _RefreshComponent = (mode, id, topics) => {
 }
 
 export const headModeArticle = () => <DefaultArticle title="WELCOME" body="HELLO WEB"/>;
-export const navModeArticle = (topics) => (<DefaultArticle title={topics.id} body={topics.body}/>)
+export const navModeArticle = (topics) => <DefaultArticle title={topics.id} body={topics.body}/>;
 
 /**
  * 하다보니 위 처럼 여러 함수를 export 해서 쓰는게 아닌 필요한 함수들을

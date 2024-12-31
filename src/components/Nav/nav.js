@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { NavEvent } from '../../events/alertEvent';
 import { NavConvert } from '../../events/convertStateEvent'; 
-import { useContent } from '../../states/modes';
+import { useContent, NAV_MODE } from '../../states/modes';
 
 const DefaultNav = memo((props) => {
     const { setCompo } = useContent();
@@ -12,7 +12,7 @@ const DefaultNav = memo((props) => {
             <li key={topic.id}>
               <a href={`/read/${topic.id}`} onClick={(event)=>{
                 NavEvent(props, event, topic.id);
-                setCompo(NavConvert("READ", {id: topic.id, topics: topic}));
+                setCompo(NavConvert(NAV_MODE, {id: topic.id, topics: topic}));
               }}>
                 {topic.title}
               </a>

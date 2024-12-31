@@ -2,6 +2,7 @@
 import { createContext, useContext, useState } from "react";
 import { content } from "../events/convertStateEvent";
 import { default as topics } from "../components/Nav/topics";
+import { Defaulter } from '../components/Create/createManager';
 
 export const HEAD_MODE = "WELCOME"
 export const NAV_MODE = "READ"
@@ -13,8 +14,11 @@ const ContentContext = createContext();
 export const ContentProvider = ({ children }) => {
     const [compo, setCompo] = useState(content);
     const [topic, newTopic] = useState(topics);
+    const [currentPage, setPage] = useState(Defaulter());
     return (
-        <ContentContext.Provider value={{ compo, setCompo, topic, newTopic}}>
+        <ContentContext.Provider value={{
+            compo, setCompo, topic, newTopic, currentPage, setPage
+        }}>
             {children}
         </ContentContext.Provider>
     );

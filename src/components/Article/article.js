@@ -9,4 +9,4 @@ const DefaultArticle = memo((props) => {
     );
 });
 
-export default DefaultArticle; 
+export default DefaultArticle;

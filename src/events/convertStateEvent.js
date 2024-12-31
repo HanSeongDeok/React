@@ -1,4 +1,4 @@
-import { _ConvertState, _RefreshComponent, StateConverter, headModeArticle } from "../components/Article/ArticleManager";
+import { _ConvertState, _RefreshComponent, StateConverter, headModeArticle } from "../components/Article/articleManager";
 
 /**
  * 해당 형태의 then/catch 보다는 async/catch가 더 트랜디 하다고 하다.
