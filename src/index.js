@@ -3,11 +3,52 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import RootApp from './App';
 import reportWebVitals from './reportWebVitals';
+import { memo } from 'react';
+import { BrowserRouter, Routes, Route, swith } from 'react-router';
+
+const Home = memo(() => {
+  return (
+    <div>
+      <h1>Home</h1>
+      Home...
+    </div>
+  )
+});
+
+const Topics = memo(() => {
+  return (
+    <div>
+      <h1>Topics</h1>
+      Topics...
+    </div>
+  )
+});
+
+const Contact = memo(() => {
+  return (
+    <div>
+      <h1>Contact</h1>
+      Contact...
+    </div>
+  )
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RootApp />
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/topics' element={<Topics/>}/>
+      <Route path='/contacts' element={<Contact/>}/>
+    </Routes>
+    <ul>
+      <li><a href='/'> HOME </a></li>
+      <li><a href='/topics'> TOPICS </a></li>
+      <li><a href='/contacts'> CONTACTS </a></li>
+    </ul>
+    <RootApp/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
