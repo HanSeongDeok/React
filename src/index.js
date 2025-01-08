@@ -4,7 +4,7 @@ import './index.css';
 import RootApp from './App';
 import reportWebVitals from './reportWebVitals';
 import { memo } from 'react';
-import { BrowserRouter, Routes, Route, swith } from 'react-router';
+import { HashRouter, BrowserRouter, Routes, Route, Link } from 'react-router';
 
 const Home = memo(() => {
   return (
@@ -36,19 +36,24 @@ const Contact = memo(() => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/topics' element={<Topics/>}/>
       <Route path='/contacts' element={<Contact/>}/>
     </Routes>
     <ul>
+      <li><Link to='/'> HOME </Link></li>
+      <li><Link to='/topics'> TOPICS </Link></li>
+      <li><Link to='/contacts'> CONTACTS </Link></li>
+    </ul>
+    <ul>
       <li><a href='/'> HOME </a></li>
       <li><a href='/topics'> TOPICS </a></li>
       <li><a href='/contacts'> CONTACTS </a></li>
     </ul>
     <RootApp/>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
