@@ -4,7 +4,7 @@ import './index.css';
 import RootApp from './App';
 import reportWebVitals from './reportWebVitals';
 import { memo } from 'react';
-import { HashRouter, BrowserRouter, Routes, Route, Link } from 'react-router';
+import { HashRouter, BrowserRouter, Routes, Route, Link, NavLink } from 'react-router';
 
 const Home = memo(() => {
   return (
@@ -15,10 +15,21 @@ const Home = memo(() => {
   )
 });
 
+let contents = [
+  {id:1, title: 'HTML', description: 'HTML is ...'},
+  {id:2, title: 'HTML', description: 'HTML is ...'},
+  {id:3, title: 'HTML', description: 'HTML is ...'},
+]
+
 const Topics = memo(() => {
   return (
     <div>
       <h1>Topics</h1>
+      <ul>
+        <li><NavLink to="/topics/1"></NavLink></li>
+        <li><NavLink to="/topics/2"></NavLink></li>
+        <li><NavLink to="/topics/3"></NavLink></li>
+      </ul>
       Topics...
     </div>
   )
@@ -43,9 +54,18 @@ root.render(
       <Route path='/contacts' element={<Contact/>}/>
     </Routes>
     <ul>
-      <li><Link to='/'> HOME </Link></li>
-      <li><Link to='/topics'> TOPICS </Link></li>
-      <li><Link to='/contacts'> CONTACTS </Link></li>
+      <li><NavLink 
+        to='/'
+        className = {({ isActive }) =>
+          isActive ? "active" : ""
+        }> NAV_LINK_HOME </NavLink></li>
+      <li><NavLink to='/topics'> NAV_LINK_TOPICS </NavLink></li>
+      <li><NavLink to='/contacts'> NAV_LINK_CONTACTS </NavLink></li>
+    </ul>
+    <ul>
+      <li><Link to='/'> LINK_HOME </Link></li>
+      <li><Link to='/topics'> LINK_TOPICS </Link></li>
+      <li><Link to='/contacts'> LINK_CONTACTS </Link></li>
     </ul>
     <ul>
       <li><a href='/'> HOME </a></li>
