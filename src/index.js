@@ -4,13 +4,22 @@ import './index.css';
 import RootApp from './App';
 import reportWebVitals from './reportWebVitals';
 import { memo } from 'react';
-import { HashRouter, BrowserRouter, Routes, Route, Link, NavLink } from 'react-router';
+import { HashRouter, BrowserRouter, Routes, Route, Link, NavLink, useParams } from 'react-router';
 
 const Home = memo(() => {
   return (
     <div>
       <h1>Home</h1>
       Home...
+    </div>
+  )
+});
+
+const Topic = memo(()=> {
+  return (
+    <div>
+      <h1>Topic</h1>
+      Topic...
     </div>
   )
 });
